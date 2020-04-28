@@ -19,7 +19,7 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="NickJacob <nick.jacob@appmonet.com>"
 
 ADD entrypoint.sh /entrypoint.sh
-ADD ./submit-report.js /submit-report.js
+ADD submit-report.js /submit-report.js
 
 RUN chmod +x /entrypoint.sh
 
