@@ -11,11 +11,14 @@ inputs:
   task:
     description: 'The ./gradlew command arguments'
     required: true
+  github_token:
+    description: 'Your github token'
+    required: true
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    GITHUB_TOKEN: ${{ inputs.github_token }}
   args:
     - ${{ inputs.task }}
