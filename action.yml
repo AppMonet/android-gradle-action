@@ -1,22 +1,21 @@
-name: 'Gradle Android'
-description: 'Run Android Gradle tasks'
+name: 'Infer Android'
+description: 'Run Infer on Gradle Project'
 
-author: "Raul6469 <raul6469@outlook.com>"
+author: "Nick Jacob <nick.jacob@appmonet.com>"
 
 branding:
   color: green
   icon: play
 
 inputs:
-  script:
+  task:
     description: 'The ./gradlew command arguments'
     required: true
-  android-licence:
-    description: 'Your Android license agreement id'
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   args:
-    - ${{ inputs.android-licence }}
-    - ${{ inputs.script }}
+    - ${{ inputs.task }}
