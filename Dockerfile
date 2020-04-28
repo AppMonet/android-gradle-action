@@ -20,6 +20,7 @@ LABEL "maintainer"="NickJacob <nick.jacob@appmonet.com>"
 
 ADD entrypoint.sh /entrypoint.sh
 ADD submit-report.js /submit-report.js
+ADD local.properties /local.properties
 
 RUN chmod +x /entrypoint.sh
 
