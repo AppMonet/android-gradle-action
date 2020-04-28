@@ -17,7 +17,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: bknk/github-android-infer:v2
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
   args:
